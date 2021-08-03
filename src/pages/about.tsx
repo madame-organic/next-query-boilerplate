@@ -5,7 +5,16 @@ interface IAboutProps {}
 
 const About: React.FC<IAboutProps> = () => {
     return (
-        <Layout pageTitle="Madame Organic - About">
+        <Layout
+            pageTitle="Chu Choice - About"
+            currentPageUrl="/about"
+            metaInfo={[
+                {
+                    name:"robots",
+                    content: "noindex"
+                }
+            ]}
+        >
             <h1>About us</h1>
             <p>
                 Madame Organic Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque debitis delectus
