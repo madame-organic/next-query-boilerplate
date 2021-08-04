@@ -1,9 +1,9 @@
-import { AppProps } from "next/app";
+import { AppProps } from 'next/app';
 import { QueryClientProvider, QueryClient } from 'react-query';
 
 import '../styles/index.css';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function CustomApp({ Component, pageProps }: AppProps) {
     const queryCache = new QueryClient();
