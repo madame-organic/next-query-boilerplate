@@ -1,32 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import useTranslation from 'next-translate/useTranslation';
 
 import AppLinks from './AppLinks';
-import { useRouter } from "next/router";
 
 interface IHeaderProps {}
 
 const Header: React.FC<IHeaderProps> = () => {
     const router = useRouter();
     const { locale, asPath } = router;
-    const isServer = typeof window === "undefined";
-    // let lang = locale;
-    // if (!isServer) {
-    //     lang = localStorage.getItem('lang') || locale;
-    // }
-    // const [language, setLanguage] = useState(lang);
+    const isServer = typeof window === 'undefined';
     const [language, setLanguage] = useState(locale);
-
-    // useEffect(() => {
-    //     let userLanguage;
-    //     if (!isServer) {
-    //         userLanguage = localStorage.getItem('lang');
-    //     }
-    //     if (userLanguage) {
-    //         router.push(asPath, asPath, {locale: userLanguage}).then(() => {
-    //             setLanguage(userLanguage);
-    //         });
-    //     }
-    // });
+    const { t } = useTranslation('common');
 
     const changeLanguage = (e) => {
         e.preventDefault();
@@ -41,19 +26,19 @@ const Header: React.FC<IHeaderProps> = () => {
 
     return (
         <header>
-            <AppLinks href="/" label="Home" />
+            <AppLinks href="/" label={t('header.home')} />
             <nav>
-                <AppLinks href="/about" label="About" />
-                <AppLinks href="/contact" label="Contact" />
+                <AppLinks href="/about" label={t('header.about')} />
+                <AppLinks href="/contact" label={t('header.contact')} />
             </nav>
             <nav>
                 <select name="lang" id="language" value={language} onChange={changeLanguage}>
                     <option value="en">EN</option>
-                    <option value="th">TH</option>
+                    <option value="th">ไทย</option>
                 </select>
             </nav>
         </header>
     );
-}
+};
 
 export default Header;

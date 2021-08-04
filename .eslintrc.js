@@ -6,10 +6,7 @@ module.exports = {
         sourceType: 'module',
         ecmaFeatures: { jsx: true },
     },
-    extends: [
-        'prettier/@typescript-eslint',
-        'plugin:prettier/recommended'
-    ],
+    extends: ['plugin:prettier/recommended'],
     globals: {
         React: 'writable',
     },
@@ -22,4 +19,4 @@ module.exports = {
         node: true,
         browser: true,
     },
-}
+};
