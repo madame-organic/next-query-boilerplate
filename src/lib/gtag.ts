@@ -1,7 +1,9 @@
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
+const trackingId = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
+
 export const pageView = (url: string) => {
     // @ts-ignore
-    window.gtag('config', GA_TRACKING_ID, {
+    window.gtag('config', trackingId, {
         page_path: url,
     });
 };
