@@ -1,2 +1,10 @@
 const nextTranslate = require('next-translate');
-module.exports = nextTranslate();
+const { withSentryConfig } = require('@sentry/nextjs');
+
+const moduleExports = nextTranslate();
+
+const SentryWebpackPluginOptions = {
+    silent: true,
+};
+
+module.exports = withSentryConfig(moduleExports, SentryWebpackPluginOptions);
