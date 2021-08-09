@@ -37,8 +37,8 @@ This boilerplate uses the following libraries and tools:
 
 #### ToDos
 - [x] i18n
-- [ ] Sentry
-- [ ] Analytics
+- [x] Sentry
+- [x] Analytics
 - [ ] Typestyle / styled-component
 - [ ] Docker
 - [ ] Github actions
